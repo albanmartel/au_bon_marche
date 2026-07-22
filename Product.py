@@ -51,7 +51,7 @@ class Product:
     def type(self, value: str) -> None:
         self._type = value
 
-        
+
     @property
     def unit(self) -> str:
         return self.unit
@@ -60,6 +60,16 @@ class Product:
     @unit.setter
     def unit(self, value: str) -> None:
         self._unit = value
+
+
+    @property
+    def price(self) -> float | None:
+        return self.price
+
+    
+    @price.setter
+    def price(self, value: float | None) -> None:
+        self._price = value
 
 
 
