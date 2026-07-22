@@ -16,7 +16,7 @@ class Product:
     def get_products(cls) -> list[Product]:
         return cls.product
 
-    def __init__(self, name: str, type: str, unit: str, price: float | int, stock: int ) -> None:
+    def __init__(self, name: str, type: str, stock: int, price: float | int, unit: str ) -> None:
         """
         function init
         allow to initialize the product class
@@ -29,15 +29,14 @@ class Product:
         self.id = str(uuid.uuid4().hex)
         self.name = name
         self.type = type
-        self.unit = unit
         self.stock = stock
         self.price = price
-        self.stock = stock
+        self.unit = unit
         Product.products.append(self)
 
     @property
     def name(self) -> str:
-        return self.name
+        return self._name
 
 
     @name.setter
@@ -47,7 +46,7 @@ class Product:
 
     @property
     def type(self) -> str:
-        return self.type
+        return self._type
 
 
     @type.setter
@@ -57,7 +56,7 @@ class Product:
 
     @property
     def unit(self) -> str:
-        return self.unit
+        return self._unit
 
 
     @unit.setter
@@ -67,7 +66,7 @@ class Product:
 
     @property
     def price(self) -> float | None:
-        return self.price
+        return self._price
 
 
     @price.setter
@@ -77,7 +76,7 @@ class Product:
 
     @property
     def stock(self) -> int | None:
-        return self.stock
+        return self._stock
 
 
     @stock.setter
@@ -85,4 +84,12 @@ class Product:
         self._stock = value
 
 
+if __name__ == "__main__":
+    print("Test de la classe Product")
+    product = Product("Mandarine", "Légume", "6", "2.8", "kg")
+    print(f"Nom: {product.name}")
+    print(f"Type: {product.type}")
+    print(f"Unité: {product.unit}")
+    print(f"Prix: {product.price}")
+    print(f"Stock: {product.stock} {product.unit}")
 
