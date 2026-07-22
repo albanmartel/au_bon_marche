@@ -8,13 +8,7 @@ from datetime import datetime
 
 @dataclass
 class Customer:
-    customers: ClassVar[list[Customer]] = []
 
-    @classmethod
-    def get_customers(cls) -> list:
-        return cls._customers
-
-    @classmethod
     def __init__(self, id: str, surname: str, first_name: str, creation_date: datetime) ->None:
         """
         Function init de la classe Customer
