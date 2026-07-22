@@ -33,32 +33,36 @@ _FUNCTIONS_
 
 ---
 
+### CLASS Customer *Client*
 
-CLASS Customer
+_DATA_
 
-DATA
-id_client
-surname (nom de famille)
-first_name (prénom)
-date creation fiche
+| Paramètre | Description |
+| :--- | :--- |
+|**id_customer**| *identifiant client* |
+|**surname**| *nom de famille* |
+|**first_name**| *prénom* |
+|**date creation**| *fiche* |
 
-FONCTIONS
-init customer (ajouter client)
-delete customer (supprimer client)
-ajouter une commande
-ajouter produit
-ajouter qte
-modifier quantité
-supprimer produit
-supprimer une commande
-indiquer fin de saisie
-payer une commande
-demande facture
-demander un historique des commandes
-ajout produit
-suppression produit
+_FONCTIONS_
+
+| Fonction | Description |
+| :--- | :--- |
+|**init customer** | *ajouter client*|
+|**delete_account** | *Supprimer le compte client* |
+|**add_order** | *Créer et ajouter une nouvelle commande au client* |
+|**delete_order** | *Annuler ou supprimer une commande existante* |
+|**complete_entry** | *Indiquer la fin de la saisie des articles* |
+|**Pay_order** | *payer une commande* |
+|**request_invoice** | *demander une facture* |
+|**get_order_history** | *Consulter l'historique des commandes* |
+|**add_product** | *ajouter un produit* |
+|**add_quantity** | *Augmenter la quantité d'un produit* |
+|**del_product** | *supprimer un produit* |
+|**complete_entry** | *Indiquer la fin de la saisie des articles* |
 
 
+---
 
 CLASS Product
 
