@@ -104,29 +104,31 @@ _FONCTIONS_
 
 ## Les Constantes
 
+```
 FRUITS = (
-("Clémentine", "6", "2.9", "kg"),
-("Datte", "4", "7", "kg"),
-("Grenade", "3", "3.5", "kg"),
-("Kaki", "3", "4.5", "kg"), 
-("Kiwi", "5", "3.5", "kg"),
-("Mandarine", "6", "2.8", "kg"), 
-("Orange",  "8", "1.5", "kg"), 
-("Pamplemousse", "8", "2", "pièce"),
-("Poire", "5", "2.5", "kg"),
-("Pomme", "8", "1.5", "kg"),
+    ("Clémentine", "6", "2.9", "kg"),
+    ("Datte", "4", "7", "kg"),
+    ("Grenade", "3", "3.5", "kg"),
+    ("Kaki", "3", "4.5", "kg"), 
+    ("Kiwi", "5", "3.5", "kg"),
+    ("Mandarine", "6", "2.8", "kg"), 
+    ("Orange",  "8", "1.5", "kg"), 
+    ("Pamplemousse", "8", "2", "pièce"),
+    ("Poire", "5", "2.5", "kg"),
+    ("Pomme", "8", "1.5", "kg"),
 )
 
 VEGETABLES = (
-("Carotte", "7", "1.3", "kg"),
-("Choux de Bruxelles", "4", "4" "kg"),
-("Chou vert", "12", "2.5", "pièce"),
-("Courge Butternut", "6", "2.5", "kg"),
-("Endive", "5", "2.5", "kg"),
-("Épinard", "4", "2.6", "kg"),
-("Poireau", "5", "1.2", "kg"),
-("Potiron", "6", "2.5", "pièce"),
-("Radis noir", "10", "5", "pièce"),
-("Salsifis", "3", "2.5", "kg"),
+    ("Carotte", "7", "1.3", "kg"),
+    ("Choux de Bruxelles", "4", "4" "kg"),
+    ("Chou vert", "12", "2.5", "pièce"),
+    ("Courge Butternut", "6", "2.5", "kg"),
+    ("Endive", "5", "2.5", "kg"),
+    ("Épinard", "4", "2.6", "kg"),
+    ("Poireau", "5", "1.2", "kg"),
+    ("Potiron", "6", "2.5", "pièce"),
+    ("Radis noir", "10", "5", "pièce"),
+    ("Salsifis", "3", "2.5", "kg"),
 )
+```
 
