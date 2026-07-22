@@ -64,18 +64,22 @@ _FONCTIONS_
 
 ---
 
-CLASS Product
+### CLASS Product *Produit*
 
-DATA
-id (Identifiant)
-name (nom du produit)
-type (fruit ou legume)
-unit (unité de mesure kg / pièce)
-price (prix du produit)
-stock (stock disponible mesure: unité de produit)
+_DATA_
 
-FONCTIONS
+| Paramètre | Description |
+| :--- | :--- |
+|**id_product** | *Identifiant produit* |
+|**name** | *nom du produit* |
+|**type** | *fruit ou légume* |
+|**unit** | *unité de mesure kg / pièce* |
+|**price** | *prix du produit* |
+|**stock** | *stock disponible mesure: unité de produit* |
 
+_FONCTIONS_
+
+---
 
 CLASS Orders(Commandes)
 
