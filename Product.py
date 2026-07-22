@@ -14,9 +14,9 @@ class Product:
 
     @classmethod
     def get_products(cls) -> list[Product]:
-        return cls.product
+        return cls._products
 
-    def __init__(self, name: str, type: str, stock: int, price: float | int, unit: str ) -> None:
+    def __init__(self, id: str, name: str, type: str, stock: int, price: float | int, unit: str ) -> None:
         """
         function init
         allow to initialize the product class
@@ -26,7 +26,7 @@ class Product:
         :param price: The price of the product
         :param stock: The stock of the product
         """
-        self.id = str(uuid.uuid4().hex)
+        self.id = id
         self.name = name
         self.type = type
         self.stock = stock
