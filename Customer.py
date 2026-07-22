@@ -23,13 +23,10 @@ class Customer:
         :param first_name: The first name of the customer
         :param creation_date: Date of customer creation
         """
-        self.id = id
+        self.id_customer = id
         self.surname = surname
         self.first_name = first_name
         self.creation_date = creation_date
-        Customer.customers.append(self)
 
-
-if __name__ == "__main__":
-    print("Test de la classe Customer")
-    Customer("Martin", "Arthur", datetime.today().strftime('%Y-%m-%d %H:%M:%S'))
+    def __str__(self):
+        return f"client n°{self.id_customer} : {self.first_name} {self.surname} - Créé le {self.creation_date}"
