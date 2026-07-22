@@ -3,9 +3,12 @@
 ## Schéma descriptif du fonctionnement du programme
 
 Magasin --> gère des --> clients
+
 Client --> passe une ou des --> commandes 
+
 Commandes  --> concerne des --> produits
 
+---
 
 CLASS Shop
 
@@ -107,3 +110,4 @@ VEGETABLES = (
 ("Radis noir", "10", "5", "pièce"),
 ("Salsifis", "3", "2.5", "kg"),
 )
+
