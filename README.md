@@ -5,12 +5,12 @@ Client --> passe une ou des --> commandes
 Commandes  --> concerne des --> produits
 
 
-CLASS Magasin
+CLASS Shop
 
-data
+DATA
 
 FUNCTIONS
-Add_customer
+f_create_customer
 Delete_customer
 Customer_list
 Edit_daily_money
