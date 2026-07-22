@@ -1,13 +1,18 @@
 #!/usr/bin/env python3
 #-*-coding: utf-8 -*/-
-from multiprocessing import process
-from os import name
+
 from typing import ClassVar
 from dataclasses import dataclass
 from datetime import datetime
 
 @dataclass
 class Customer:
+    customers: ClassVar[list[Customer]] = []
+
+    @classmethod
+    def get_customers(cls) -> list:
+        return cls._customers
+
 
     def __init__(self, id: str, surname: str, first_name: str, creation_date: datetime) ->None:
         """
@@ -22,7 +27,7 @@ class Customer:
         self.surname = surname
         self.first_name = first_name
         self.creation_date = creation_date
-
+        Customer.customers.append(self)
 
 
 if __name__ == "__main__":
