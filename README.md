@@ -132,3 +132,8 @@ VEGETABLES = (
 )
 ```
 
+## Copier le projet
+
+```
+git clone https://github.com/albanmartel/au_bon_marche.git
+```
