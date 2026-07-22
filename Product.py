@@ -66,10 +66,20 @@ class Product:
     def price(self) -> float | None:
         return self.price
 
-    
+
     @price.setter
     def price(self, value: float | None) -> None:
         self._price = value
+
+
+    @property
+    def stock(self) -> int | None:
+        return self.stock
+
+
+    @stock.setter
+    def stock(self, value: int) -> None:
+        self._stock = value
 
 
 
