@@ -11,13 +11,15 @@ DATA
 
 FUNCTIONS
 f_create_customer
-Delete_customer
-Customer_list
+f_add_client_to_list
+f_delete_customer
+f_get_customer_list
 Edit_daily_money
 Print_customer_ticket
 Check_sufficient_stock
 Check_product_stock
 Update_stock_after_customer_payment
+f_create_product
 
 
 CLASS Client
@@ -41,6 +43,8 @@ indiquer fin de saisie
 payer une commande
 demande facture
 demander un historique des commandes
+ajout produit
+suppression produit
 
 
 
@@ -68,6 +72,4 @@ quantite_produit
 date_de_commande
 
 FONCTIONS
-ajout produit
-suppression produit
 total_a_payer
