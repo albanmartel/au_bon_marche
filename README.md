@@ -81,18 +81,24 @@ _FONCTIONS_
 
 ---
 
-CLASS Orders(Commandes)
+### CLASS Orders *Commandes*
 
-DATA
-id_order (commande)
-products (liste de produits de type tableau)
-quantity_products (quantité du produit)
-order_date (date de commande)
+_DATA_
 
-FONCTIONS
-add product (ajout produit) 
-delete product (suppression produit)
-order_total (total_a_payer)
+| Paramètre | Description |
+| :--- | :--- |
+|**id_order** | *commande* |
+|**products** | *liste de produits de type tableau* |
+|**quantity_products** | *quantité du produit* |
+|**order_date** | *date de commande* |
+
+_FONCTIONS_
+
+| Fonction | Description |
+| :--- | :--- |
+|**add product** | *ajout produit* | 
+|**delete product** | *suppression produit* |
+|**order_total** | *total_a_payer* |
 
 ---
 
