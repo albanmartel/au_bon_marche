@@ -11,9 +11,11 @@ DATA
 
 FUNCTIONS
 f_create_customer
-f_add_client_to_list
+f_add_customer_to_list
 f_delete_customer
-f_get_customer_list
+f_get_all_customer_list
+f_find_customer_by_id
+f_customer_by_name
 Edit_daily_money
 Print_customer_ticket
 Check_sufficient_stock
@@ -22,7 +24,7 @@ Update_stock_after_customer_payment
 f_create_product
 
 
-CLASS Client
+CLASS Customer
 
 DATA
 id_client
