@@ -44,14 +44,15 @@ demander un historique des commandes
 
 
 
-CLASS Produit
+CLASS Product
 
 DATA
-Identifiant
+id (Identifiant)
+name (nom du produit)
 type (fruit ou legume)
-unité
-prix
-stock_dispo
+unit (unité de mesure kg / pièce)
+price (prix du produit)
+stock (stock disponible mesure: unité de produit)
 
 FONCTIONS
 
