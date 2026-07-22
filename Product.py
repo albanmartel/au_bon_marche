@@ -51,3 +51,15 @@ class Product:
     def type(self, value: str) -> None:
         self._type = value
 
+        
+    @property
+    def unit(self) -> str:
+        return self.unit
+
+
+    @unit.setter
+    def unit(self, value: str) -> None:
+        self._unit = value
+
+
+
