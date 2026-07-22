@@ -31,3 +31,12 @@ class Product:
         self.price = price
         self.stock = stock
         Product.products.append(self)
+
+    @property
+    def name(self) -> str:
+        return self.name
+
+    
+    @name.setter
+    def name(self, value: str) -> None:
+        self._name = value
