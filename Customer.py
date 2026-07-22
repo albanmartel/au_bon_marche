@@ -6,21 +6,19 @@ from typing import ClassVar
 from dataclasses import dataclass
 from datetime import datetime
 
-# Pour générer un id
-import uuid
-
 @dataclass
 class Customer:
 
-    def __init__(self, surname: str, first_name: str, creation_date: datetime) ->None:
+    def __init__(self, id: str, surname: str, first_name: str, creation_date: datetime) ->None:
         """
         Function init de la classe Customer
         constructor de la classe Customer
+        :param id: id of the customer
         :param surname: The surname of the customer
         :param first_name: The first name of the customer
         :param creation_date: Date of customer creation
         """
-        self.id = str(uuid.uuid4().hex)
+        self.id = id
         self.surname = surname
         self.first_name = first_name
         self.creation_date = creation_date
