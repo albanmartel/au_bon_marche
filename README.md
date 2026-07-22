@@ -9,21 +9,21 @@ CLASS Magasin
 
 data
 
-FONCTIONS
-Ajouter client
-supprimer client
-liste des clients
-Editer bilan journée
-Imprimer tiket client
-stock_suffisant
-stock d'un produit
-mise a jourt du stock apres paiement client
+FUNCTIONS
+Add_customer
+Delete_customer
+Customer_list
+Edit_daily_money
+Print_customer_ticket
+Check_sufficient_stock
+Check_product_stock
+Update_stock_after_customer_payment
 
 
 CLASS Client
 
 DATA
-id
+id_client
 surname (nom de famille)
 first_name (prénom)
 date creation fiche
@@ -54,8 +54,6 @@ prix
 stock_dispo
 
 FONCTIONS
-
-
 
 
 
