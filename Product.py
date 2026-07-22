@@ -36,7 +36,18 @@ class Product:
     def name(self) -> str:
         return self.name
 
-    
+
     @name.setter
     def name(self, value: str) -> None:
         self._name = value
+
+
+    @property
+    def type(self) -> str:
+        return self.type
+
+
+    @type.setter
+    def type(self, value: str) -> None:
+        self._type = value
+
