@@ -10,23 +10,28 @@ Commandes  --> concerne des --> produits
 
 ---
 
-CLASS Shop
+### CLASS Shop *Magasin*
 
-DATA
+_DATA_
 
-FUNCTIONS
-f_create_customer
-f_add_customer_to_list
-f_delete_customer
-f_get_all_customer_list
-f_find_customer_by_id
-f_customer_by_name
-Edit_daily_money
-Print_customer_ticket
-Check_sufficient_stock
-Check_product_stock
-Update_stock_after_customer_payment
-f_create_product
+_FUNCTIONS_
+
+| Fonction | Description |
+| :--- | :--- |
+|**f_create_customer** | *Créer client* |
+|**f_add_customer_to_list** | *Ajouter client à la liste* |
+|**f_delete_customer** | *Supprimer client* |
+|**f_get_all_customer_list** | *Obtenir la liste de tous les clients)* |
+|**f_find_customer_by_id** | *Trouver client par ID)* |
+|**f_customer_by_name** | *Trouver client par nom)* |
+|**edit_daily_money** | *Modifier l'argent du jour)* |
+|**print_customer_ticket** | *Imprimer le ticket client)* |
+|**check_sufficient_stock** | *Vérifier si le stock est suffisant)* |
+|**check_product_stock** | *Vérifier le stock du produit)* | 
+|**update_stock_after_customer_payment** | *Mettre à jour le stock après paiement client* |
+|**f_create_product** | *Créer produit* |
+
+---
 
 
 CLASS Customer
