@@ -12,7 +12,14 @@ import uuid
 @dataclass
 class Customer:
 
-    def __init__(self, surname, first_name, creation_date):
+    def __init__(self, surname: str, first_name: str, creation_date: datetime) ->None:
+        """
+        Function init de la classe Customer
+        constructor de la classe Customer
+        :param surname: The surname of the customer
+        :param first_name: The first name of the customer
+        :param creation_date: Date of customer creation
+        """
         self.id = str(uuid.uuid4().hex)
         self.surname = surname
         self.first_name = first_name
