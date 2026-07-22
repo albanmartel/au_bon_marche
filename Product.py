@@ -5,6 +5,9 @@ from os import name
 from typing import ClassVar
 from dataclasses import dataclass
 
+# Pour générer un id
+import uuid
+
 @dataclass
 class Product:
     products: ClassVar[list[Product]] = []
@@ -23,7 +26,7 @@ class Product:
         :param price: The price of the product
         :param stock: The stock of the product
         """
-        self.id = id
+        self.id = str(uuid.uuid4().hex)
         self.name = name
         self.type = type
         self.unit = unit
