@@ -42,8 +42,6 @@ first_name (prénom)
 date creation fiche
 
 FONCTIONS
-init customer (ajouter client)
-delete customer (supprimer client)
 ajouter une commande  am
 supprimer une commande  am
 ajouter produit
