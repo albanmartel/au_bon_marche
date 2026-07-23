@@ -5,6 +5,7 @@ from typing import ClassVar
 from dataclasses import dataclass
 from datetime import datetime
 
+ljhukdfguliqrhfgluiqrhguli
 
 @dataclass
 class Customer:
