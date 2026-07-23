@@ -24,7 +24,8 @@ class Customer:
         self.surname = surname
         self.first_name = first_name
         self.creation_date = creation_date
-        self.order = []
+        # Un client a au moins une commande
+        self.order = [Order.Order("01", 0, datetime.today())]
 
     def __str__(self):
         return f"client n°{self.id_customer} : {self.first_name} {self.surname} - Créé le {self.creation_date}"
@@ -41,16 +42,15 @@ class Customer:
     def f_add_product(self, product: Product) -> None:
         # S'il y a plus d'une commande, le produit est ajouter à la dernière commande
         if len(self.order) > 0:
-            self.order[:-1].f_add_product(product)
-        # Si c'est pas le cas il faut auparavant ajouter une commande
-        else:
-            print("Impossible d'ajouter un produit à aucune commande !")
-            print("Veuillez créer une commande auparavant")
+            self.order[:-1][0].f_add_product(product)
 
 
 if __name__ == "__main__":
     customer = Customer("01", "Martin", "Arthur", "2021-07-07")
+    product = Product.Product(1, "Mandarine", "Fruit", "6", 2.8, "kg")
     print(customer)
     order = Order.Order("01", 0, datetime.today())
     customer.f_add_order(order)
+    customer.
+    customer.f_add_product(product)
     customer.f_delete_order(order)
