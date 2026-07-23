@@ -1,20 +1,9 @@
 #!/usr/bin/env python3
 #-*-coding: utf-8 -*/-
-from multiprocessing import process
-from os import name
-from typing import ClassVar
+
 from dataclasses import dataclass
 
-# Pour générer un id
-import uuid
-
-@dataclass
 class Product:
-    products: ClassVar[list[Product]] = []
-
-    @classmethod
-    def get_products(cls) -> list[Product]:
-        return cls._products
 
     def __init__(self, id: str, name: str, type: str, stock: int, price: float | int, unit: str ) -> None:
         """
@@ -26,13 +15,21 @@ class Product:
         :param price: The price of the product
         :param stock: The stock of the product
         """
-        self.id = id
+        self.id_product = id
         self.name = name
         self.type = type
         self.stock = stock
         self.price = price
         self.unit = unit
-        Product.products.append(self)
+
+    def __str__(self):
+        return (
+            f"Produit n°{self.id_product} : "
+            f"{self.name} "
+            f"({self.type}) - "
+            f"{self.stock} {self.unit} - "
+            f"{self.price} €"
+        )
 
     @property
     def name(self) -> str:
@@ -83,10 +80,16 @@ class Product:
     def stock(self, value: int) -> None:
         self._stock = value
 
+    # c'est au produit de verifier la quantité disponible
+    def f_has_enough_stock(self, quantity):
+        if  self.stock >= quantity
+            return self.stock >= quantity
+        return None
+
 
 if __name__ == "__main__":
     print("Test de la classe Product")
-    product = Product("Mandarine", "Légume", "6", "2.8", "kg")
+    product = Product(1,"Mandarine", "Fruit", 6", 2.8, "kg")
     print(f"Nom: {product.name}")
     print(f"Type: {product.type}")
     print(f"Unité: {product.unit}")
