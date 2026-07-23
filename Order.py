@@ -60,10 +60,19 @@ class Order:
         total_price = 0
         for product in self.products:
             tuple_product = self.products[product]
-            total_price += int(tuple_product[0]) * int(tuple_product[1])
+            total_price += int(tuple_product[0]) * float(tuple_product[1])
 
         self.order_price = total_price
 
+
+    @property
+    def order_price(self) -> float:
+        return self._order_price
+
+
+    @order_price.setter
+    def order_price(self, price: float) -> None:
+        self._order_price = price
 
 if __name__ == "__main__":
     print("Test la Classe Order")
@@ -74,4 +83,6 @@ if __name__ == "__main__":
     order.f_add_product_quantity_price(2, 4, 2.8)
     print(order)
     print(order.display_products_quantity_and_price())
+    order.calculate_total_price()
+    print(f"Prix de la commande: {order.order_price} €")
 
