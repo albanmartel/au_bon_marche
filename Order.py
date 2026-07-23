@@ -14,11 +14,13 @@ class Order:
         self.order_date = order_date
 
 
-    @classmethod
     def f_add_product(self, product):
         self.products.append(product)
 
 
-    @classmethod
     def f_delete_product(self, product):
         self._products.remove(product)
+
+
+    def __str__(self):
+        return f"Commande n°{self.id_order}\nListe des produits: {self.products}\nNombre de produits {self.quantity_products_ask}\nCommande créé le {self.order_date}"
