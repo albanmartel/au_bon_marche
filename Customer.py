@@ -38,6 +38,15 @@ class Customer:
         self.order.remove(order)
 
 
+    def f_add_product(self, product: Product) -> None:
+        # S'il y a plus d'une commande, le produit est ajouter à la dernière commande
+        if len(self.order) > 0:
+            self.order[:-1].f_add_product(product)
+        # Si c'est pas le cas il faut auparavant ajouter une commande
+        else:
+            print("Impossible d'ajouter un produit à aucune commande !")
+            print("Veuillez créer une commande auparavant")
+
 
 if __name__ == "__main__":
     customer = Customer("01", "Martin", "Arthur", "2021-07-07")
