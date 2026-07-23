@@ -90,6 +90,8 @@ id_order (commande)
 products (liste de produits de type tableau)
 quantity_products (quantité du produit)
 order_date (date de commande)
+is_finish (La commande est-elle terminée) (Alban)
+order_price (prix de la commande) (Alban)
 
 FONCTIONS
 add product (ajout produit) 
