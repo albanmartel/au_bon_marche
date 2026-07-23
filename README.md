@@ -83,7 +83,7 @@ stock(self) -> int | None:
 stock(self, value: int) -> None:
 f_has_enough_stock
 
-CLASS Orders(Commandes)
+CLASS Order(Commandes)
 
 DATA
 id_order (commande)
@@ -94,7 +94,10 @@ order_date (date de commande)
 FONCTIONS
 add product (ajout produit) 
 delete product (suppression produit)
+f_delete_one_product (suppression d'un seul produitde la commande)
+regroup_lines_product (si le client commande un meme produit en plusieurs fois sur la meme commande)
 order_total (total_a_payer)
+
 
 ---
 
