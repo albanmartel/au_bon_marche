@@ -13,7 +13,6 @@ class Order:
     def f_add_product(self, product_id: int, quantity: int):
         self.products.append((product_id, quantity))
 
-
     # suppression de tous les produit concernés, sur toutes les ligne de la commande, sans se preoccuper de la quantité demandée.
     # je reconstruit une liste sans les produits concernés
     # à activer si un client commande plus que le stock ou se trompe
@@ -24,4 +23,14 @@ class Order:
             if id_product != product_id
         ]
 
+    def f_add_product(self, product):
+        self.products.append(product)
+
+
+    def f_delete_product(self, product):
+        self._products.remove(product)
+
+
+    def __str__(self):
+        return f"Commande n°{self.id_order}\nListe des produits: {self.products}\nNombre de produits {self.quantity_products_ask}\nCommande créé le {self.order_date}"
 

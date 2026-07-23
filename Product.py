@@ -80,6 +80,7 @@ class Product:
     def stock(self, value: int) -> None:
         self._stock = value
 
+<<<<<<< HEAD
     # c'est au produit de verifier que la quantité demandée est disponible
     # c'est à Shop de decider quoi faire si True ou False
     def f_has_enough_stock(self, quantity_products_ask: int) -> bool:
@@ -88,7 +89,9 @@ class Product:
 
 if __name__ == "__main__":
     print("Test de la classe Product")
+<<<<<<< HEAD
     product = Product(1,"Mandarine", "Fruit", 6, 2.8, "kg")
+
     print(f"Nom: {product.name}")
     print(f"Type: {product.type}")
     print(f"Unité: {product.unit}")
