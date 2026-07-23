@@ -12,21 +12,21 @@ CLASS Shop
 DATA
 
 FUNCTIONS
-f_create_customer
-f_add_customer_to_list
-f_delete_customer
-f_get_all_customer_list
-f_find_customer_by_id
-f_customer_by_name
+f_create_customer pp
+f_add_customer_to_list pp
+f_delete_customer pp
+f_get_all_customer_list pp
+f_find_customer_by_id pp
+f_customer_by_name pp
 
-f_create_product()
-f_add_product_to_list()
-f_delete_product()
-f_get_all_product_list()
-f_find_product_by_id()
-f_find_product_by_name()
+f_create_product() pp
+f_add_product_to_list() pp
+f_delete_product() pp
+f_get_all_product_list() pp
+f_find_product_by_id() pp
+f_find_product_by_name() pp
 
-f_check_product_stock
+f_check_product_stock pp
 Update_stock_after_customer_payment
 Edit_daily_money
 Print_customer_ticket
@@ -44,18 +44,18 @@ date creation fiche
 FONCTIONS
 init customer (ajouter client)
 delete customer (supprimer client)
-ajouter une commande
+ajouter une commande  am
+supprimer une commande  am
 ajouter produit
 ajouter qte
 modifier quantité
 supprimer produit
-supprimer une commande
 indiquer fin de saisie
 payer une commande
 demande facture
 demander un historique des commandes
-ajout produit
-suppression produit
+ajout produit  am
+suppression produit  am
 
 
 
@@ -71,17 +71,17 @@ stock (stock disponible mesure: unité de produit)
 
 FONCTIONS
 __str__(self):
-name(self) -> str:
-name(self, value: str) -> None:
-type(self) -> str:
-type(self, value: str) -> None:
-unit(self) -> str:
-unit(self, value: str) -> None:
-price(self) -> float | None:
-price(self, value: float | None) -> None:
-stock(self) -> int | None:
-stock(self, value: int) -> None:
-f_has_enough_stock
+name(self) -> str: am
+name(self, value: str) -> None: am
+type(self) -> str: am
+type(self, value: str) -> None: am
+unit(self) -> str: am
+unit(self, value: str) -> None: am
+price(self) -> float | None: am
+price(self, value: float | None) -> None: am
+stock(self) -> int | None: am
+stock(self, value: int) -> None: am
+f_has_enough_stock pp
 
 CLASS Order(Commandes)
 
@@ -94,10 +94,10 @@ is_finish (La commande est-elle terminée) (Alban)
 order_price (prix de la commande) (Alban)
 
 FONCTIONS
-add product (ajout produit) 
-delete product (suppression produit)
+add product (ajout produit)  pp
+delete product (suppression produit) pp
 f_delete_one_product (suppression d'un seul produitde la commande)
-regroup_lines_product (si le client commande un meme produit en plusieurs fois sur la meme commande)
+regroup_lines_product (si le client commande un meme produit en plusieurs fois sur la meme commande) pp
 order_total (total_a_payer)
 
 
