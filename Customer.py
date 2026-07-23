@@ -27,6 +27,10 @@ class Customer:
         # Un client a au moins une commande
         self.order = [Order.Order("01", 0, datetime.today())]
 
+    def get_orders(self):
+        return self.order
+
+
     def __str__(self):
         return f"client n°{self.id_customer} : {self.first_name} {self.surname} - Créé le {self.creation_date}"
 
@@ -51,6 +55,8 @@ if __name__ == "__main__":
     print(customer)
     order = Order.Order("01", 0, datetime.today())
     customer.f_add_order(order)
-    customer.
     customer.f_add_product(product)
+    orders_list = customer.get_orders()
+    print(orders_list)
+    print(customer.get_orders()[:1][0])
     customer.f_delete_order(order)
