@@ -18,12 +18,19 @@ f_delete_customer
 f_get_all_customer_list
 f_find_customer_by_id
 f_customer_by_name
+
+f_create_product()
+f_add_product_to_list()
+f_delete_product()
+f_get_all_product_list()
+f_find_product_by_id()
+f_find_product_by_name()
+
+f_check_product_stock
+Update_stock_after_customer_payment
 Edit_daily_money
 Print_customer_ticket
-Check_sufficient_stock
-Check_product_stock
-Update_stock_after_customer_payment
-f_create_product
+
 
 
 CLASS Customer
@@ -63,7 +70,18 @@ price (prix du produit)
 stock (stock disponible mesure: unité de produit)
 
 FONCTIONS
-
+__str__(self):
+name(self) -> str:
+name(self, value: str) -> None:
+type(self) -> str:
+type(self, value: str) -> None:
+unit(self) -> str:
+unit(self, value: str) -> None:
+price(self) -> float | None:
+price(self, value: float | None) -> None:
+stock(self) -> int | None:
+stock(self, value: int) -> None:
+f_has_enough_stock
 
 CLASS Orders(Commandes)
 
