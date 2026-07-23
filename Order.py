@@ -21,14 +21,18 @@ class Order:
         if product_id in self.products:
             del self.products[product_id]
 
+
     def __str__(self):
         txt_products = ""
         for product in self.products:
             txt_products += product.__str__() + " "
 
-        return f"Commande n°{self.id_order}\nListe des produits: {txt_products}\nNombre de produits: {self.quantity_products_ask}\nCommande créé le: {self.order_date}"
+        return f"Commande n°{self.id_order}\nLe(s) produit(s): {txt_products}\nCommande créé le: {self.order_date}"
+
 
 if __name__ == "__main__":
-    order = Order("01", 0, datetime.today())
+    order = Order("01", datetime.today())
+    #product = Product(1, "Mandarine", "Fruit", 6, 2.8, "kg")
+    order.f_add_product(1, 5)
     print(order)
 
