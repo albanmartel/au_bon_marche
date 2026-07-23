@@ -86,7 +86,7 @@ class Shop:
 
     ############ fonctions diverses de gestion
 
-    # verifie le stock disponible
+    # verifie le stock disponible et retourne Bool
     def f_check_product_stock(self, product_id, quantity):
         product = self.f_find_product_by_id(product_id)
 
