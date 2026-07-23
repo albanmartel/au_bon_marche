@@ -5,8 +5,8 @@ from typing import ClassVar
 from dataclasses import dataclass
 from datetime import datetime
 import Order
+import Product
 
-ljhukdfguliqrhfgluiqrhguli
 
 @dataclass
 class Customer:
@@ -34,9 +34,14 @@ class Customer:
         self.order.append(order)
 
 
+    def f_delete_order(self, order: Order) -> None:
+        self.order.remove(order)
+
+
+
 if __name__ == "__main__":
     customer = Customer("01", "Martin", "Arthur", "2021-07-07")
     print(customer)
-    print(customer.id_customer)
-    print(customer.surname)
-    print(customer.first_name)
+    order = Order.Order("01", 0, datetime.today())
+    customer.f_add_order(order)
+    customer.f_delete_order(order)
