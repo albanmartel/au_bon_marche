@@ -5,7 +5,7 @@ from dataclasses import dataclass
 
 class Product:
 
-    def __init__(self, id: str, name: str, type: str, stock: int, price: float | int, unit: str ) -> None:
+    def __init__(self, id_product : int, name: str, type: str, stock: float, price: float, unit: str ) -> None:
         """
         function init
         allow to initialize the product class
@@ -15,7 +15,7 @@ class Product:
         :param price: The price of the product
         :param stock: The stock of the product
         """
-        self.id_product = id
+        self.id_product = id_product
         self.name = name
         self.type = type
         self.stock = stock
@@ -80,16 +80,15 @@ class Product:
     def stock(self, value: int) -> None:
         self._stock = value
 
-    # c'est au produit de verifier la quantité disponible
-    def f_has_enough_stock(self, quantity):
-        if  self.stock >= quantity
-            return self.stock >= quantity
-        return None
+    # c'est au produit de verifier que la quantité demandée est disponible
+    # c'est à Shop de decider quoi faire si True ou False
+    def f_has_enough_stock(self, quantity_products_ask: int) -> bool:
+        return quantity_products_ask <= self.stock
 
 
 if __name__ == "__main__":
     print("Test de la classe Product")
-    product = Product(1,"Mandarine", "Fruit", 6", 2.8, "kg")
+    product = Product(1,"Mandarine", "Fruit", 6, 2.8, "kg")
     print(f"Nom: {product.name}")
     print(f"Type: {product.type}")
     print(f"Unité: {product.unit}")
