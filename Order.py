@@ -5,6 +5,7 @@ from typing import ClassVar
 from dataclasses import dataclass
 import Product
 
+
 @dataclass
 class Order:
 
@@ -22,6 +23,7 @@ class Order:
 
     def f_delete_product(self, product: Product) -> None:
         self._products.remove(product)
+        self.quantity_products_ask -= 1
 
 
     def __str__(self):
@@ -30,3 +32,7 @@ class Order:
             txt_products += product.__str__() + " "
 
         return f"Commande n°{self.id_order}\nListe des produits: {txt_products}\nNombre de produits: {self.quantity_products_ask}\nCommande créé le: {self.order_date}"
+
+if __name__ == "__main__":
+    order = Order("01", 0, datetime.today())
+    print(order)
