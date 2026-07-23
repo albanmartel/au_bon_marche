@@ -4,6 +4,7 @@
 from typing import ClassVar
 from dataclasses import dataclass
 from datetime import datetime
+import Order
 
 
 @dataclass
@@ -22,6 +23,19 @@ class Customer:
         self.surname = surname
         self.first_name = first_name
         self.creation_date = creation_date
+        self.order = []
 
     def __str__(self):
         return f"client n°{self.id_customer} : {self.first_name} {self.surname} - Créé le {self.creation_date}"
+
+
+    def f_add_order(self, order: Order) -> None:
+        self.order.append(order)
+
+
+if __name__ == "__main__":
+    customer = Customer("01", "Martin", "Arthur", "2021-07-07")
+    print(customer)
+    print(customer.id_customer)
+    print(customer.surname)
+    print(customer.first_name)
