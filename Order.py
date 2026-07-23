@@ -38,21 +38,28 @@ class Order:
         print(self.products)
         for product in self.products:
             tuple_product = self.products[product]
-            txt_products += f"Id_product: {str(product)}\nQuantité: {str(tuple_product[0])}\nPrix/unité:{str(tuple_product[1])} €\n"
+            txt_products += f"Id_product: {str(product)}\nQuantité: {str(tuple_product[0])}\n"
 
-        return f"Commande n°{self.id_order}\nLe(s) produit(s): {txt_products}\nCommande créé le: {self.order_date}"
-    
+        return f"Commande n°{self.id_order}\nLe(s) produit(s):\n{txt_products}\nCommande créé le: {self.order_date}"
+
+
+    def display_products_quantity_and_price(self):
+        txt_products = ""
+        print(self.products)
+        for product in self.products:
+            tuple_product = self.products[product]
+            txt_products += f"\nId_product: {str(product)}\nQuantité: {str(tuple_product[0])}\nPrix/unité:{str(tuple_product[1])} €\n"
+
+        return f"Commande n°{self.id_order}\nLe(s) produit(s):\n {txt_products}\nCommande créé le: {self.order_date}"
 
 
 if __name__ == "__main__":
     print("Test la Classe Order")
     order = Order("01", datetime.today())
-    #product = Product(1, "Mandarine", "Fruit", 6, 2.8, "kg")
-    #order.f_add_product(1, 5)
     # Mandarine
     order.f_add_product_quantity_price(1,5, 2.8)
     # Epinard
     order.f_add_product_quantity_price(2, 4, 2.8)
-
     print(order)
+    print(order.display_products_quantity_and_price())
 
