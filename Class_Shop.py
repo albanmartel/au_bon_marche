@@ -1,9 +1,37 @@
 from datetime import datetime
+from socket import send_fds
+
 from Customer import Customer
 from Product import Product
 
+FRUITS = (
+    ("Clémentine", "6", "2.9", "kg"),
+    ("Datte", "4", "7", "kg"),
+    ("Grenade", "3", "3.5", "kg"),
+    ("Kaki", "3", "4.5", "kg"),
+    ("Kiwi", "5", "3.5", "kg"),
+    ("Mandarine", "6", "2.8", "kg"),
+    ("Orange", "8", "1.5", "kg"),
+    ("Pamplemousse", "8", "2", "pièce"),
+    ("Poire", "5", "2.5", "kg"),
+    ("Pomme", "8", "1.5", "kg"),
+)
+
+VEGETABLES = (
+    ("Carotte", "7", "1.3", "kg"),
+    ("Choux de Bruxelles", "4", "4" "kg"),
+    ("Chou vert", "12", "2.5", "pièce"),
+    ("Courge Butternut", "6", "2.5", "kg"),
+    ("Endive", "5", "2.5", "kg"),
+    ("Épinard", "4", "2.6", "kg"),
+    ("Poireau", "5", "1.2", "kg"),
+    ("Potiron", "6", "2.5", "pièce"),
+    ("Radis noir", "10", "5", "pièce"),
+    ("Salsifis", "3", "2.5", "kg"),
+)
 
 class Shop:
+
 
     # on cré une liste de customer vide pour l'ouverture du magasin
     def __init__(self):
@@ -103,4 +131,17 @@ class Shop:
             )
 
         return enough_stock
+
+    def create_stock(self) -> None:
+        for fruit in FRUITS:
+            produit = self.f_create_product(fruit[0], "Fruit", fruit[1], fruit[2], fruit[3])
+            self.f_add_product_to_list(produit)
+        for vegetable in VEGETABLES:
+            produit = self.f_create_product(vegetable[0], "Légume", vegetable[1], vegetable[2], vegetable[3])
+            self.f_add_product_to_list(produit)
+
+
+if __name__ == "__main__":
+    shop = Shop()
+    shop.f_add_customer_to_list()
 
