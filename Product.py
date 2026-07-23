@@ -82,14 +82,14 @@ class Product:
 
     # c'est au produit de verifier la quantité disponible
     def f_has_enough_stock(self, quantity):
-        if  self.stock >= quantity
+        if  self.stock >= quantity:
             return self.stock >= quantity
         return None
 
 
 if __name__ == "__main__":
     print("Test de la classe Product")
-    product = Product(1,"Mandarine", "Fruit", 6", 2.8, "kg")
+    product = Product(1,"Mandarine", "Fruit", "6", 2.8, "kg")
     print(f"Nom: {product.name}")
     print(f"Type: {product.type}")
     print(f"Unité: {product.unit}")
