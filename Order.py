@@ -3,6 +3,7 @@
 from datetime import datetime
 from typing import ClassVar
 from dataclasses import dataclass
+import Product
 
 @dataclass
 class Order:
@@ -14,13 +15,10 @@ class Order:
         self.order_date = order_date
 
 
-    def f_add_product(self, product):
+    def f_add_product(self, product: Product) -> None:
         self.products.append(product)
+        self.quantity_products_ask += 1
 
 
-    def f_delete_product(self, product):
+    def f_delete_product(self, product: Product) -> None:
         self._products.remove(product)
-
-
-    def __str__(self):
-        return f"Commande n°{self.id_order}\nListe des produits: {self.products}\nNombre de produits {self.quantity_products_ask}\nCommande créé le {self.order_date}"
