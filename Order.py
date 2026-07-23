@@ -7,17 +7,16 @@ from dataclasses import dataclass
 @dataclass
 class Order:
 
-    @classmethod
     def __init__(self, id_order: str, quantity_products: int, order_date: datetime) ->None:
         self.id_order = id_order
         self.products = []
-        self.quantity_products = quantity_products
+        self.quantity_products_ask = quantity_products
         self.order_date = order_date
 
 
     @classmethod
     def f_add_product(self, product):
-        self._products.append(product)
+        self.products.append(product)
 
 
     @classmethod
