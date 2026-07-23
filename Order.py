@@ -10,6 +10,9 @@ class Order:
         # dico (id_product, quantité) car la quantité appartient à chaque produit
         self.products = {}
         self.order_date = order_date
+        self.is_finished = False
+        self.order_price = 0
+
 
 
     def f_add_product(self, product_id: int, quantity: int):
@@ -51,6 +54,15 @@ class Order:
             txt_products += f"\nId_product: {str(product)}\nQuantité: {str(tuple_product[0])}\nPrix/unité:{str(tuple_product[1])} €\n"
 
         return f"Commande n°{self.id_order}\nLe(s) produit(s):\n {txt_products}\nCommande créé le: {self.order_date}"
+
+
+    def calculate_total_price(self) ->None:
+        total_price = 0
+        for product in self.products:
+            tuple_product = self.products[product]
+            total_price += int(tuple_product[0]) * int(tuple_product[1])
+
+        self.order_price = total_price
 
 
 if __name__ == "__main__":
