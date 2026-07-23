@@ -133,6 +133,11 @@ class Shop:
         return enough_stock
 
     def create_stock(self) -> None:
+        """
+        function create_stock(self)
+        Elle permet de créer les produits du stock
+        :return: None
+        """
         for fruit in FRUITS:
             produit = self.f_create_product(fruit[0], "Fruit", fruit[1], fruit[2], fruit[3])
             self.f_add_product_to_list(produit)
