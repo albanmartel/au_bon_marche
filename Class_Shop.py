@@ -1,5 +1,5 @@
 from datetime import datetime
-from socket import send_fds
+#from socket import send_fds
 
 from Customer import Customer
 from Product import Product
@@ -19,7 +19,7 @@ FRUITS = (
 
 VEGETABLES = (
     ("Carotte", "7", "1.3", "kg"),
-    ("Choux de Bruxelles", "4", "4" "kg"),
+    ("Choux de Bruxelles", "4", "4", "kg"),
     ("Chou vert", "12", "2.5", "pièce"),
     ("Courge Butternut", "6", "2.5", "kg"),
     ("Endive", "5", "2.5", "kg"),
@@ -143,5 +143,7 @@ class Shop:
 
 if __name__ == "__main__":
     shop = Shop()
-    shop.f_add_customer_to_list()
+    shop.create_stock()
+
+
 
