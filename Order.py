@@ -3,6 +3,7 @@
 from datetime import datetime
 import Product
 
+<<<<<<< HEAD
 
 class Order:
 
@@ -25,5 +26,26 @@ class Order:
             if id_product != product_id
         ]
 
-    def f_delete_product(self, product: Product) -> None:
-        self._products.remove(product)
+    # suppression de tous les produit concernés, sur toutes les ligne de la commande, sans se preoccuper de la quantité demandée.
+    # je reconstruit une liste sans les produits concernés
+    # à activer si un client commande plus que le stock ou se trompe
+
+    def f_delete_one_product(self, product_id: int):
+        self.products = [
+            (id_product, quantity)
+            for id_product, quantity in self.products
+            if id_product != product_id
+        ]
+
+
+    def __str__(self):
+        txt_products = ""
+        for product in self.products:
+            txt_products += product.__str__() + " "
+
+        return f"Commande n°{self.id_order}\nListe des produits: {txt_products}\nNombre de produits: {self.quantity_products_ask}\nCommande créé le: {self.order_date}"
+
+if __name__ == "__main__":
+    order = Order("01", 0, datetime.today())
+    print(order)
+
