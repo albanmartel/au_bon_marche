@@ -74,7 +74,7 @@ class Shop:
 
     def f_find_product_by_id(self, product_id):
         for product in self.products:
-            if product.id == product_id:
+            if product.id_product == product_id:
                 return product
         return None
 
@@ -86,18 +86,22 @@ class Shop:
 
     ############ fonctions diverses de gestion
 
+    # verifie le stock disponible
     def f_check_product_stock(self, product_id, quantity):
         product = self.f_find_product_by_id(product_id)
 
         if product is None:
+            print("Produit introuvable")
             return False
 
-        return product.stock >= quantity
+        enough_stock = product.f_has_enough_stock(quantity)
 
-### la suite pour test
-shop = Shop()
+        if not enough_stock:
+            print(
+                f"Stock insuffisant pour {product.name} : "
+                f"demandé {quantity} {product.unit}, "
+                f"disponible {product.stock} {product.unit}"
+            )
 
-customer1 = shop.f_create_customer("Dupont", "Jean")
-customer2 = shop.f_create_customer("Martin", "Sophie")
-print(customer1)
-print(customer2)
+        return enough_stock
+
