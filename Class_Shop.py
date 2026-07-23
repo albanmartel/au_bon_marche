@@ -25,6 +25,14 @@ class Shop:
         self.next_customer_id =  self.next_customer_id + 1
         return customer
 
+    # creation d'une fonction d'ajout du customer créé pour permettre une validation de la creation du customer
+    def f_add_customer_to_list(self, customer):
+        self.customer.append(customer)
+
+    def f_delete_customer(self, customer):
+        if customer in self.customer:
+            self.customer.remove(customer)
+
     def f_get_all_customer_list(self):
         return self.customer
 
@@ -38,15 +46,6 @@ class Shop:
         for customer in self.customer:
             if customer.surname == surname:
                 return customer
-
-    # creation d'une fonction d'ajout du customer créé pour permettre une validation de la creation du customer
-    def f_add_customer_to_list(self, customer):
-        self.customer.append(customer)
-
-    def f_delete_customer(self, customer):
-        if customer in self.customer:
-            self.customer.remove(customer)
-
 
 
     ############ fonctions pour les produits
