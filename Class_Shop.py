@@ -147,7 +147,16 @@ class Shop:
 
 
 if __name__ == "__main__":
+    print("Test Class_Shop")
     shop = Shop()
+    customer_1 = shop.f_create_customer("Delatour", "Sophie")
+    customer_2 = shop.f_create_customer("Martin", "Arthur")
+    print(f"Ajout de l'utilisateur: {customer_1}")
+    shop.f_add_customer_to_list(customer_1)
+    shop.f_add_customer_to_list(customer_2)
+    custommers = shop.f_get_all_customer_list()
+    print(custommers)
+
     shop.create_stock()
 
 
