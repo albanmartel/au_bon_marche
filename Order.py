@@ -5,7 +5,7 @@ import Product
 
 class Order:
 
-    def __init__(self, id_order: str, order_date: datetime) ->None:
+    def __init__(self, id_order: int, order_date: datetime) ->None:
         self.id_order = id_order
         # dico (id_product, quantité) car la quantité appartient à chaque produit
         self.products = {}
@@ -15,52 +15,63 @@ class Order:
 
 
     # à laisser ici car le produit appartient à une commande
-    def f_add_product(self, product_id: int, quantity: int):
-        if product_id in self.products:
-            self.products[product_id] += quantity
+    def f_add_product(self, product, quantity: int):
+        if product in self.products:
+            self.products[product] += quantity
         else:
-            self.products[product_id] = quantity
+            self.products[product] = quantity
 
-
-    def f_add_product_quantity_price(self, product_id: int, quantity: int, price: float):
-        if product_id in self.products:
-            old_quantity = self.products[product_id][0]
+    def f_add_product_quantity_price(self, product, quantity: int, price: float):
+        if product in self.products:
+            old_quantity = self.products[product][0]
             new_quantity = old_quantity + quantity
-            self.products[product_id] +=  (new_quantity, price)
+            self.products[product] = (new_quantity, price)
         else:
-            self.products[product_id] = (quantity, price)
+            self.products[product] = (quantity, price)
 
-
-    def f_delete_one_product(self, product_id: int):
-        if product_id in self.products:
-            del self.products[product_id]
-
+    def f_delete_one_product(self, product):
+        if product in self.products:
+            del self.products[product]
 
     def __str__(self):
         txt_products = ""
-        print(self.products)
         for product in self.products:
-            tuple_product = self.products[product]
-            txt_products += f"Id_product: {str(product)}\nQuantité: {str(tuple_product[0])}\n"
-
-        return f"Commande n°{self.id_order}\nLe(s) produit(s):\n{txt_products}\nCommande créé le: {self.order_date}"
-
+            quantity = self.products[product]
+            txt_products += (
+                f"Produit : {product.name}\n"
+                f"Quantité : {quantity}\n"
+            )
+        return (
+            f"Commande n°{self.id_order}\n"
+            f"Le(s) produit(s):\n{txt_products}"
+            f"\nCommande créée le: {self.order_date}"
+        )
 
     def display_products_quantity_and_price(self):
         txt_products = ""
         print(self.products)
         for product in self.products:
-            tuple_product = self.products[product]
-            txt_products += f"\nId_product: {str(product)}\nQuantité: {str(tuple_product[0])}\nPrix/unité:{str(tuple_product[1])} €\n"
+            quantity, price = self.products[product]
 
-        return f"Commande n°{self.id_order}\nLe(s) produit(s):\n {txt_products}\nCommande créé le: {self.order_date}"
+            txt_products += (
+                f"\nProduit : {product.name}\n"
+                f"Quantité : {quantity}\n"
+                f"Prix/unité : {price} €\n"
+            )
 
+        return (
+            f"Commande n°{self.id_order}\n"
+            f"Le(s) produit(s):\n{txt_products}"
+            f"\nCommande créée le: {self.order_date}"
+        )
 
-    def calculate_total_price(self) ->None:
+    def calculate_total_price(self) -> None:
         total_price = 0
+
         for product in self.products:
-            tuple_product = self.products[product]
-            total_price += int(tuple_product[0]) * float(tuple_product[1])
+            quantity, price = self.products[product]
+
+            total_price += quantity * price
 
         self.order_price = total_price
 
@@ -74,15 +85,5 @@ class Order:
     def order_price(self, price: float) -> None:
         self._order_price = price
 
-if __name__ == "__main__":
-    print("Test la Classe Order")
-    order = Order("01", datetime.today())
-    # Mandarine
-    order.f_add_product_quantity_price(1,5, 2.8)
-    # Epinard
-    order.f_add_product_quantity_price(2, 4, 2.8)
-    print(order)
-    print(order.display_products_quantity_and_price())
-    order.calculate_total_price()
-    print(f"Prix de la commande: {order.order_price} €")
+
 
