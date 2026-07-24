@@ -11,7 +11,7 @@ import Product
 @dataclass
 class Customer:
 
-    def __init__(self, id: str, surname: str, first_name: str, creation_date: datetime) ->None:
+    def __init__(self, id: str, surname: str, first_name: str, creation_date: datetime, first_order_id) ->None:
         """
         Function init de la classe Customer
         constructor de la classe Customer
@@ -25,7 +25,7 @@ class Customer:
         self.first_name = first_name
         self.creation_date = creation_date
         # Un client a au moins une commande
-        self.order = [Order.Order("01", 0, datetime.today())]
+        self.order = [Order.Order(first_order_id, datetime.today())]
 
     def get_orders(self):
         return self.order
@@ -42,11 +42,11 @@ class Customer:
     def f_delete_order(self, order: Order) -> None:
         self.order.remove(order)
 
-
-    def f_add_product(self, product: Product) -> None:
-        # S'il y a plus d'une commande, le produit est ajouter à la dernière commande
-        if len(self.order) > 0:
-            self.order[:-1][0].f_add_product(product)
+    def f_find_order_by_id(self, order_id):
+        for order in self.order:
+            if order.id_order == order_id:
+                return order
+        return None
 
 
 if __name__ == "__main__":
