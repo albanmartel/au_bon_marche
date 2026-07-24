@@ -13,6 +13,13 @@ Alban MARTEL
 import Class_Shop
 
 def is_customer(txt: str)->bool:
+    """
+    fonction is_customer
+    poermet de demander au client s'il a déjà un compte client
+    ou pas
+    :param txt: texte attendu "Oui" ou  "OUI" ou "O" ou autrechose veut dire "Non"
+    :return: Vrai ou Faux
+    """
     test = False
     if (txt.upper() == "OUI" or txt.upper() == "O"):
         test = True
@@ -23,6 +30,13 @@ def is_customer(txt: str)->bool:
 
 
 def is_end_of_day(txt: str)->bool:
+    """
+    fonction is_end_of_day
+    permet de dire si l'on est en fin de journée
+    pour imprimer le bilan
+    :param txt: texte attendu "Oui" ou  "OUI" ou "O" ou autrechose veut dire "Non"
+    :return: Vrai ou Faux
+    """
     test = False
     if (txt.upper() == "OUI" or txt.upper() == "O"):
         test = True
@@ -31,6 +45,14 @@ def is_end_of_day(txt: str)->bool:
 
 
 def is_type_correct(texte: str, type_cible: str) -> bool:
+    """
+    fonction is_type_correct
+    permet de contrôler la saisie d'un input
+    en lui donnant le contenu récupéré par l'input et le type attendu de la saisie
+    :param texte: texte de l'input
+    :param type_cible: type appendu sous forme de chaîne de caractère "int", "float", "str
+    :return: Vrai ou Faux et affiche une erreur quand une exception est levée
+    """
     texte = texte.strip()
 
     if type_cible == "int":
@@ -59,6 +81,21 @@ def main():
     shop = Class_Shop.Shop()
     # Initialiser le stock
     shop.f_create_stock()
+    # Création d'un client
+    customer_sophie = shop.f_create_customer("Delatour", "Sophie")
+    #customer_sophie = shop.f_find_customer_by_surname("Delatour")
+    print(customer_sophie.id_customer)
+    order_sophie = shop.f_create_order(customer_sophie.id_customer)
+    # Ajouter des mandarines à la commande de Sophie
+    order_sophie.f_add_product_quantity_price(1, 5, 2.8)
+    # Ajouter des épinards à la commande de Sophie
+    order_sophie.f_add_product_quantity_price(2, 4, 2.8)
+    # retirer un kilo d'épinards à la commande de Sophie
+    order_sophie.f_delete_one_product(1)
+    print(f"La/Le client(e): {customer_sophie}")
+    print(f"Elle a une commande de {order_sophie.display_products_quantity_and_price()}")
+    order_sophie.calculate_total_price()
+    print(f"Elle doit {order_sophie.order_price} €")
     print("Un client entre dans le magazin")
     print("Bienvenue cher Client")
     surname = input("Quel est votre nom ? ")
@@ -80,6 +117,16 @@ def main():
         print(produit)
     print("Quel produit Voulez-vous acheter ?")
     txt = input ("Entrez le numéro de produit : ")
+    # Vérification de la saisie numéro de produit
+    while not is_type_correct(txt, "int"):
+        print("Un entier était attendu !")
+        txt = input ("Entrez le numéro de produit : ")
+    print(f"Vous avez choisi {shop.f_find_product_by_id(txt)}")
+    # trouver un produit par id ne fonctionne pas pour l'instant
+
+
+
+
 
 
 
