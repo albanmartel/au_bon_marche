@@ -80,8 +80,8 @@ def create_customer_Sophie(shop: Class_Shop) ->None:
     # Création d'un client
     customer_sophie = shop.f_create_customer("Delatour", "Sophie")
     #customer_sophie = shop.f_find_customer_by_surname("Delatour")
-    print(customer_sophie.id_customer)
-    order_sophie = shop.f_create_order(customer_sophie.id_customer)
+    print(f"Id de Sophie : {customer_sophie.id_customer}")
+    order_sophie = shop.f_create_order(customer_sophie)
     # Ajouter des mandarines à la commande de Sophie
     order_sophie.f_add_product_quantity_price(1, 5, 2.8)
     # Ajouter des épinards à la commande de Sophie
