@@ -12,6 +12,9 @@ CLASS Shop
 DATA
 
 FUNCTIONS
+
+f_create_stock am
+
 f_create_customer pp
 f_add_customer_to_list pp
 f_delete_customer pp
@@ -27,9 +30,9 @@ f_find_product_by_id() pp
 f_find_product_by_name() pp
 f_check_product_stock pp
 
-f_create_stock am
-f_create_order
-f_delete_order
+f_create_order pp
+f_delete_order pp
+f_find_order_by_id pp 
 f_add_order_to_customer
 Update_stock_after_customer_payment
 Edit_daily_money
@@ -47,8 +50,6 @@ date creation fiche
 
 FONCTIONS
 
-# ajouter une commande  am
-# supprimer une commande  am
 f_find_order_by_id pp
 
 ajouter qte

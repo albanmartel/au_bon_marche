@@ -35,20 +35,6 @@ class Customer:
         return f"client n°{self.id_customer} : {self.first_name} {self.surname} - Créé le {self.creation_date}"
 
 
-    def f_add_order(self, order: Order) -> None:
-        self.order.append(order)
-
-
-    def f_delete_order(self, order: Order) -> None:
-        self.order.remove(order)
-
-    def f_find_order_by_id(self, order_id):
-        for order in self.order:
-            if order.id_order == order_id:
-                return order
-        return None
-
-
 if __name__ == "__main__":
     customer = Customer("01", "Martin", "Arthur", "2021-07-07")
     product = Product.Product(1, "Mandarine", "Fruit", "6", 2.8, "kg")
