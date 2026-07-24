@@ -50,10 +50,13 @@ def main():
         customer = shop.f_create_customer(surname, first_name)
     # Création de la commande
     shop.f_create_order(customer.id_customer)
-    print("Que voulez-vous acheter ?")
+    print("Voici la liste des produits ?")
     # Imprimer la liste des produits
     for produit in shop.f_get_all_product_list():
         print(produit)
+    print("Quel produit Voulez-vous acheter ?")
+    txt = input ("Entez le numéro de produit : ")
+
 
 
 if __name__ == "__main__":
