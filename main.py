@@ -13,6 +13,13 @@ Alban MARTEL
 import Class_Shop
 
 def is_customer(txt: str)->bool:
+    """
+    fonction is_customer
+    poermet de demander au client s'il a déjà un compte client
+    ou pas
+    :param txt: texte attendu "Oui" ou  "OUI" ou "O" ou autrechose veut dire "Non"
+    :return: Vrai ou Faux
+    """
     test = False
     if (txt.upper() == "OUI" or txt.upper() == "O"):
         test = True
@@ -23,6 +30,13 @@ def is_customer(txt: str)->bool:
 
 
 def is_end_of_day(txt: str)->bool:
+    """
+    fonction is_end_of_day
+    permet de dire si l'on est en fin de journée
+    pour imprimer le bilan
+    :param txt: texte attendu "Oui" ou  "OUI" ou "O" ou autrechose veut dire "Non"
+    :return: Vrai ou Faux
+    """
     test = False
     if (txt.upper() == "OUI" or txt.upper() == "O"):
         test = True
@@ -31,6 +45,14 @@ def is_end_of_day(txt: str)->bool:
 
 
 def is_type_correct(texte: str, type_cible: str) -> bool:
+    """
+    fonction is_type_correct
+    permet de contrôler la saisie d'un input
+    en lui donnant le contenu récupéré par l'input et le type attendu de la saisie
+    :param texte: texte de l'input
+    :param type_cible: type appendu sous forme de chaîne de caractère "int", "float", "str
+    :return: Vrai ou Faux et affiche une erreur quand une exception est levée
+    """
     texte = texte.strip()
 
     if type_cible == "int":
