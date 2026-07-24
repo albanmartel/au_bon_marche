@@ -29,19 +29,19 @@ def main():
     shop.f_create_stock()
     print("Un client entre dans le magazin")
     print("Bienvenue cher Client")
+    surname = input("Quel est votre nom ? ")
+    first_name = input("Quel est votre prénom ? ")
     print("Avez-vous un compte chez nous ?")
     yes_or_no = input("Oui(O)/Non(N): ")
-    surname = input("Quel est votre nom ?")
-    first_name = input("Quel est votre prénom ?")
     customer = None
     if is_customer(yes_or_no):
         customer = shop.f_find_customer_by_surname(surname)
 
+    #Création du compte client
     if customer is None:
         customer = shop.f_create_customer(surname, first_name)
     print("Que voulez-vous acheter ?")
-
-
+    print(shop.f_get_all_product_list())
 
 
 if __name__ == "__main__":
