@@ -71,6 +71,13 @@ class Product:
     def stock(self, value: float) -> None:
         self._stock = value
 
+    @property
+    def name(self) -> str:
+        return self._name
+
+    @name.setter
+    def name(self, value: str) -> None:
+        self._name = value
 
     # c'est au produit de verifier que la quantité demandée est disponible
     # c'est à Shop de decider quoi faire si True ou False
