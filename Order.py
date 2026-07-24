@@ -14,7 +14,7 @@ class Order:
         self.order_price = 0
 
 
-
+    # a laisser ici car le produit appartient à une commande
     def f_add_product(self, product_id: int, quantity: int):
         if product_id in self.products:
             self.products[product_id] += quantity
@@ -25,10 +25,10 @@ class Order:
     def f_add_product_quantity_price(self, product_id: int, quantity: int, price: float):
         if product_id in self.products:
             old_quantity = self.products[product_id][0]
-            new_quantity = int(old_quantity) + quantity
-            self.products[product_id] += str(new_quantity), str(price)
+            new_quantity = old_quantity + quantity
+            self.products[product_id] +=  (new_quantity, price)
         else:
-            self.products[product_id] = str(quantity), str(price)
+            self.products[product_id] = (quantity, price)
 
 
     def f_delete_one_product(self, product_id: int):
