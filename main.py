@@ -59,6 +59,21 @@ def main():
     shop = Class_Shop.Shop()
     # Initialiser le stock
     shop.f_create_stock()
+    # Création d'un client
+    customer_sophie = shop.f_create_customer("Delatour", "Sophie")
+    #customer_sophie = shop.f_find_customer_by_surname("Delatour")
+    print(customer_sophie.id_customer)
+    order_sophie = shop.f_create_order(customer_sophie.id_customer)
+    # Ajouter des mandarines à la commande de Sophie
+    order_sophie.f_add_product_quantity_price(1, 5, 2.8)
+    # Ajouter des épinards à la commande de Sophie
+    order_sophie.f_add_product_quantity_price(2, 4, 2.8)
+    # retirer un kilo d'épinards à la commande de Sophie
+    order_sophie.f_delete_one_product(1)
+    print(f"La/Le client(e): {customer_sophie}")
+    print(f"Elle a une commande de {order_sophie.display_products_quantity_and_price()}")
+    order_sophie.calculate_total_price()
+    print(f"Elle doit {order_sophie.order_price} €")
     print("Un client entre dans le magazin")
     print("Bienvenue cher Client")
     surname = input("Quel est votre nom ? ")
@@ -80,6 +95,16 @@ def main():
         print(produit)
     print("Quel produit Voulez-vous acheter ?")
     txt = input ("Entrez le numéro de produit : ")
+    # Vérification de la saisie numéro de produit
+    while not is_type_correct(txt, "int"):
+        print("Un entier était attendu !")
+        txt = input ("Entrez le numéro de produit : ")
+    print(f"Vous avez choisi {shop.f_find_product_by_id(txt)}")
+    # trouver un produit par id ne fonctionne pas pour l'instant
+
+
+
+
 
 
 
