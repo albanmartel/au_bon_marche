@@ -19,9 +19,11 @@ def main():
     shop.f_create_stock()
     print("Un client entre dans le magazin")
     print("Bienvenue cher Client")
-    name = input("Quel est votre nom ?")
-    surname = input("Quel est votre prénom ?")
-    print()
+    surname = input("Quel est votre nom ?")
+    first_name = input("Quel est votre prénom ?")
+    customer_1 = shop.f_create_customer(surname, first_name)
+    print("Que voulez-vous acheter ?")
+    
 
 
 if __name__ == "__main__":
