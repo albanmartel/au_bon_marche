@@ -17,6 +17,11 @@ def main():
     shop = Class_Shop.Shop()
     # Initialiser le stock
     shop.f_create_stock()
+    print("Un client entre dans le magazin")
+    print("Bienvenue cher Client")
+    name = input("Quel est votre nom ?")
+    surname = input("Quel est votre prénom ?")
+    print()
 
 
 if __name__ == "__main__":
