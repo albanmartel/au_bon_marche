@@ -177,15 +177,24 @@ class Shop:
         :return: None
         """
         for fruit in FRUITS:
-            produit = self.f_create_product(fruit[0], "Fruit", fruit[1], fruit[2], fruit[3])
+            produit = self.f_create_product(fruit[0], "Fruit", int(fruit[1]), float(fruit[2]), fruit[3])
             self.f_add_product_to_list(produit)
         for vegetable in VEGETABLES:
-            produit = self.f_create_product(vegetable[0], "Légume", vegetable[1], vegetable[2], vegetable[3])
+            produit = self.f_create_product(vegetable[0], "Légume", int(vegetable[1]), float(vegetable[2]), vegetable[3])
             self.f_add_product_to_list(produit)
 
 
 if __name__ == "__main__":
+    print("Test Class_Shop")
     shop = Shop()
+    customer_1 = shop.f_create_customer("Delatour", "Sophie")
+    customer_2 = shop.f_create_customer("Martin", "Arthur")
+    print(f"Ajout de l'utilisateur: {customer_1}")
+    shop.f_add_customer_to_list(customer_1)
+    shop.f_add_customer_to_list(customer_2)
+    custommers = shop.f_get_all_customer_list()
+    print(custommers)
+
     shop.create_stock()
 
 
