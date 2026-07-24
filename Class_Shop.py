@@ -1,8 +1,8 @@
 from datetime import datetime
-#from socket import send_fds
 
 from Customer import Customer
 from Product import Product
+from Order import Order
 
 FRUITS = (
     ("Clémentine", "6", "2.9", "kg"),
@@ -37,8 +37,10 @@ class Shop:
     def __init__(self):
         self.customer = []
         self.products = []
+        self.order = []
         self.next_customer_id = 1
         self.next_product_id = 1
+        self.next_order_id = 1
 
 
 ############ fonctions pour les clients
@@ -47,10 +49,12 @@ class Shop:
             self.next_customer_id,
             surname,
             first_name,
-            datetime.now()
+            datetime.now(),
+            self.next_order_id
         )
 
         self.next_customer_id =  self.next_customer_id + 1
+        self.next_order_id += 1
         return customer
 
     # creation d'une fonction d'ajout du customer créé pour permettre une validation de la creation du customer
@@ -75,6 +79,40 @@ class Shop:
             if customer.surname == surname:
                 return customer
 
+    ############ fonctions pour les commandes
+
+    def f_create_order(self, customer_id):
+        customer = self.f_find_customer_by_id(customer_id)
+
+        if customer is None:
+            return None
+
+        order = Order(
+            self.next_order_id,
+            datetime.now()
+        )
+
+        self.next_order_id += 1
+
+        customer.f_add_order(order)
+
+        return order
+
+    def f_delete_order(self, customer_id, order_id):
+        customer = self.f_find_customer_by_id(customer_id)
+
+        if customer is None:
+            print("Client introuvable")
+            return False
+
+        order = customer.f_find_order_by_id(order_id)
+
+        if order is None:
+            print("Commande introuvable")
+            return False
+
+        customer.f_delete_order(order)
+        return True
 
     ############ fonctions pour les produits
     def f_create_product(self, name, type, stock, price, unit):
@@ -132,7 +170,7 @@ class Shop:
 
         return enough_stock
 
-    def create_stock(self) -> None:
+    def f_create_stock(self) -> None:
         """
         function create_stock(self)
         Elle permet de créer les produits du stock
