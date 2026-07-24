@@ -30,6 +30,30 @@ def is_end_of_day(txt: str)->bool:
         test = False
 
 
+def is_type_correct(texte: str, type_cible: str) -> bool:
+    texte = texte.strip()
+
+    if type_cible == "int":
+        try:
+            int(texte)
+            return True
+        except ValueError:
+            raise ValueError("Saisie invalide : attendu un entier.")
+
+    if type_cible == "float":
+        try:
+            float(texte)
+            return True
+        except ValueError:
+            raise ValueError("Saisie invalide : attendu un float.")
+
+    if type_cible == "str":
+        # Une saisie est toujours une str (donc True si ce n'est pas vide ici)
+        return len(texte) > 0
+
+    raise ValueError("type_cible doit être 'int', 'float' ou 'str'.")
+
+
 def main():
     print("AU BON MARCHé")
     shop = Class_Shop.Shop()
@@ -55,7 +79,7 @@ def main():
     for produit in shop.f_get_all_product_list():
         print(produit)
     print("Quel produit Voulez-vous acheter ?")
-    txt = input ("Entez le numéro de produit : ")
+    txt = input ("Entrez le numéro de produit : ")
 
 
 
