@@ -184,10 +184,10 @@ class Shop:
         :return: None
         """
         for fruit in FRUITS:
-            produit = self.f_create_product(fruit[0], "Fruit", int(fruit[1]), float(fruit[2]), fruit[3])
+            produit = self.f_create_product(fruit[0], "Fruit", float(fruit[1]), float(fruit[2]), fruit[3])
             self.f_add_product_to_list(produit)
         for vegetable in VEGETABLES:
-            produit = self.f_create_product(vegetable[0], "Légume", int(vegetable[1]), float(vegetable[2]), vegetable[3])
+            produit = self.f_create_product(vegetable[0], "Légume", float(vegetable[1]), float(vegetable[2]), vegetable[3])
             self.f_add_product_to_list(produit)
 
 

@@ -77,14 +77,3 @@ class Product:
     def f_has_enough_stock(self, quantity_products_ask: int) -> bool:
         return quantity_products_ask <= self.stock
 
-
-if __name__ == "__main__":
-    print("Test de la classe Product")
-    product = Product(1,"Mandarine", "Fruit", 6, 2.8, "kg")
-
-    print(f"Nom: {product.name}")
-    print(f"Type: {product.type}")
-    print(f"Unité: {product.unit}")
-    print(f"Prix: {product.price}")
-    print(f"Stock: {product.stock} {product.unit}")
-
