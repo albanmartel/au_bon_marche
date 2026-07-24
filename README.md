@@ -52,15 +52,29 @@ FONCTIONS
 
 f_find_order_by_id pp
 
-ajouter qte
-modifier quantité
-supprimer produit
 indiquer fin de saisie
 payer une commande
 demande facture
-# demander un historique des commandes
-ajout produit  am
-suppression produit  am
+
+CLASS Order(Commandes)
+
+DATA
+id_order (commande)
+products (liste de produits de type tableau)
+
+order_date (date de commande)
+is_finish (La commande est-elle terminée) (Alban)
+order_price (prix de la commande) (Alban)
+
+FONCTIONS
+add product (ajout produit)  pp A
+ajouter produit am 
+delete product (suppression produit) pp 
+quantity_products (quantité du produit)
+modifier qte
+f_delete_one_product (suppression d'un seul produit de la commande) pp 
+f_add_product_quantity_price
+order_total (total_a_payer)
 
 
 
@@ -88,22 +102,6 @@ stock(self) -> int | None: am
 stock(self, value: int) -> None: am
 f_has_enough_stock pp
 
-CLASS Order(Commandes)
-
-DATA
-id_order (commande)
-products (liste de produits de type tableau)
-quantity_products (quantité du produit)
-order_date (date de commande)
-is_finish (La commande est-elle terminée) (Alban)
-order_price (prix de la commande) (Alban)
-
-FONCTIONS
-add product (ajout produit)  pp A METTRE DANS CUSTOMER
-ajouter produit am A METTRE DANS CUSTOMER
-delete product (suppression produit) pp A METTRE DANS CUSTOMER
-f_delete_one_product (suppression d'un seul produit de la commande) pp A METTRE DANS CUSTOMER
-order_total (total_a_payer)
 
 
 ---

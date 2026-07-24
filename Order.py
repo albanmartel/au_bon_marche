@@ -14,7 +14,7 @@ class Order:
         self.order_price = 0
 
 
-    # a laisser ici car le produit appartient à une commande
+    # à laisser ici car le produit appartient à une commande
     def f_add_product(self, product_id: int, quantity: int):
         if product_id in self.products:
             self.products[product_id] += quantity
