@@ -25,8 +25,12 @@ f_delete_product() pp
 f_get_all_product_list() pp
 f_find_product_by_id() pp
 f_find_product_by_name() pp
-
 f_check_product_stock pp
+
+f_create_stock am
+f_create_order
+f_delete_order
+f_add_order_to_customer
 Update_stock_after_customer_payment
 Edit_daily_money
 Print_customer_ticket
@@ -42,16 +46,18 @@ first_name (prénom)
 date creation fiche
 
 FONCTIONS
-ajouter une commande  am
-supprimer une commande  am
-ajouter produit
+
+# ajouter une commande  am
+# supprimer une commande  am
+f_find_order_by_id pp
+
 ajouter qte
 modifier quantité
 supprimer produit
 indiquer fin de saisie
 payer une commande
 demande facture
-demander un historique des commandes
+# demander un historique des commandes
 ajout produit  am
 suppression produit  am
 
@@ -92,10 +98,10 @@ is_finish (La commande est-elle terminée) (Alban)
 order_price (prix de la commande) (Alban)
 
 FONCTIONS
-add product (ajout produit)  pp
-delete product (suppression produit) pp
-f_delete_one_product (suppression d'un seul produitde la commande)
-regroup_lines_product (si le client commande un meme produit en plusieurs fois sur la meme commande) pp
+add product (ajout produit)  pp A METTRE DANS CUSTOMER
+ajouter produit am A METTRE DANS CUSTOMER
+delete product (suppression produit) pp A METTRE DANS CUSTOMER
+f_delete_one_product (suppression d'un seul produit de la commande) pp A METTRE DANS CUSTOMER
 order_total (total_a_payer)
 
 
