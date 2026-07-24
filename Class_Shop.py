@@ -80,9 +80,7 @@ class Shop:
 
     ############ fonctions pour les commandes
 
-    def f_create_order(self, customer_id):
-        customer = self.f_find_customer_by_id(customer_id)
-
+    def f_create_order(self, customer):
         if customer is None:
             return None
 
@@ -97,22 +95,21 @@ class Shop:
 
         return order
 
-    def f_delete_order(self, customer_id, order_id):
-        customer = self.f_find_customer_by_id(customer_id)
-
+    def f_delete_order(self, customer, order):
         if customer is None:
             print("Client introuvable")
             return False
-
-        order = self.f_find_order_by_id(customer_id, order_id)
 
         if order is None:
             print("Commande introuvable")
             return False
 
-        customer.order.remove(order)
+        if order in customer.order:
+            customer.order.remove(order)
+            return True
 
-        return True
+        print("Cette commande n'appartient pas à ce client")
+        return False
 
     def f_find_order_by_id(self, customer_id, order_id):
         customer = self.f_find_customer_by_id(customer_id)
@@ -164,9 +161,7 @@ class Shop:
     ############ fonctions diverses de gestion
 
     # verifie le stock disponible et retourne Bool
-    def f_check_product_stock(self, product_id, quantity):
-        product = self.f_find_product_by_id(product_id)
-
+    def f_check_product_stock(self, product, quantity):
         if product is None:
             print("Produit introuvable")
             return False
@@ -196,18 +191,6 @@ class Shop:
             self.f_add_product_to_list(produit)
 
 
-if __name__ == "__main__":
-    print("Test Class_Shop")
-    shop = Shop()
-    customer_1 = shop.f_create_customer("Delatour", "Sophie")
-    customer_2 = shop.f_create_customer("Martin", "Arthur")
-    print(f"Ajout de l'utilisateur: {customer_1}")
-    shop.f_add_customer_to_list(customer_1)
-    shop.f_add_customer_to_list(customer_2)
-    custommers = shop.f_get_all_customer_list()
-    print(custommers)
-
-    shop.create_stock()
 
 
 

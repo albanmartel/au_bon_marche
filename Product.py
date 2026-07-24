@@ -31,15 +31,6 @@ class Product:
             f"{self.price} €"
         )
 
-    @property
-    def name(self) -> str:
-        return self._name
-
-
-    @name.setter
-    def name(self, value: str) -> None:
-        self._name = value
-
 
     @property
     def type(self) -> str:
@@ -72,12 +63,12 @@ class Product:
 
 
     @property
-    def stock(self) -> int | None:
+    def stock(self) -> float | None:
         return self._stock
 
 
     @stock.setter
-    def stock(self, value: int) -> None:
+    def stock(self, value: float) -> None:
         self._stock = value
 
 
