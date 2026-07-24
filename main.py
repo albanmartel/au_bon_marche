@@ -76,11 +76,7 @@ def is_type_correct(texte: str, type_cible: str) -> bool:
     raise ValueError("type_cible doit être 'int', 'float' ou 'str'.")
 
 
-def main():
-    print("AU BON MARCHé")
-    shop = Class_Shop.Shop()
-    # Initialiser le stock
-    shop.f_create_stock()
+def create_customer_Sophie(shop: Class_Shop) ->None:
     # Création d'un client
     customer_sophie = shop.f_create_customer("Delatour", "Sophie")
     #customer_sophie = shop.f_find_customer_by_surname("Delatour")
@@ -96,6 +92,16 @@ def main():
     print(f"Elle a une commande de {order_sophie.display_products_quantity_and_price()}")
     order_sophie.calculate_total_price()
     print(f"Elle doit {order_sophie.order_price} €")
+
+
+
+def main():
+    print("AU BON MARCHé")
+    shop = Class_Shop.Shop()
+    # Initialiser le stock
+    shop.f_create_stock()
+    # Refactorisation de la cliente Sophie
+    create_customer_Sophie(shop)
     print("Un client entre dans le magazin")
     print("Bienvenue cher Client")
     surname = input("Quel est votre nom ? ")
