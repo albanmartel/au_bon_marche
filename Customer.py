@@ -11,7 +11,7 @@ import Product
 @dataclass
 class Customer:
 
-    def __init__(self, id: str, surname: str, first_name: str, creation_date: datetime, first_order_id) ->None:
+    def __init__(self, id: int, surname: str, first_name: str, creation_date: datetime, first_order_id: int) ->None:
         """
         Function init de la classe Customer
         constructor de la classe Customer
@@ -35,14 +35,3 @@ class Customer:
         return f"client n°{self.id_customer} : {self.first_name} {self.surname} - Créé le {self.creation_date}"
 
 
-if __name__ == "__main__":
-    customer = Customer("01", "Martin", "Arthur", "2021-07-07")
-    product = Product.Product(1, "Mandarine", "Fruit", "6", 2.8, "kg")
-    print(customer)
-    order = Order.Order("01", 0, datetime.today())
-    customer.f_add_order(order)
-    customer.f_add_product(product)
-    orders_list = customer.get_orders()
-    print(orders_list)
-    print(customer.get_orders()[:1][0])
-    customer.f_delete_order(order)

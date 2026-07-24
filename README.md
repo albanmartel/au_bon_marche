@@ -50,8 +50,6 @@ date creation fiche
 
 FONCTIONS
 
-f_find_order_by_id pp
-
 indiquer fin de saisie
 payer une commande
 demande facture
