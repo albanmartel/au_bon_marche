@@ -22,6 +22,14 @@ def is_customer(txt: str)->bool:
     return test
 
 
+def is_end_of_day(txt: str)->bool:
+    test = False
+    if (txt.upper() == "OUI" or txt.upper() == "O"):
+        test = True
+    else:
+        test = False
+
+
 def main():
     print("AU BON MARCHé")
     shop = Class_Shop.Shop()
@@ -40,8 +48,12 @@ def main():
     #Création du compte client
     if customer is None:
         customer = shop.f_create_customer(surname, first_name)
+    # Création de la commande
+    shop.f_create_order(customer.id_customer)
     print("Que voulez-vous acheter ?")
-    print(shop.f_get_all_product_list())
+    # Imprimer la liste des produits
+    for produit in shop.f_get_all_product_list():
+        print(produit)
 
 
 if __name__ == "__main__":
