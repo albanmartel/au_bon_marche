@@ -10,9 +10,14 @@ dans le répertoire du projet
 Philippe PEYROUS
 Alban MARTEL
 """
+import Class_Shop
 
 def main():
-    pass
+    print("AU BON MARCHé")
+    shop = Class_Shop.Shop()
+    # Initialiser le stock
+    shop.f_create_stock()
+
 
 if __name__ == "__main__":
     main()
