@@ -29,6 +29,7 @@ class Order:
         else:
             self.products[product] = (quantity, price)
 
+
     def f_delete_one_product(self, product):
         if product in self.products:
             del self.products[product]
